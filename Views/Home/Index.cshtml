@@ -1,0 +1,119 @@
+﻿<script src="~/Scripts/jquery-3.3.1.js"></script>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card" style="width:300px;">
+                <h5 class="card-title text-center">Registrarse</h5>
+                <div class="card-body">
+                    <form id="myForm">
+
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input id="nombre" class="form-control" type="text" name="name" value="" placeholder="Ingrese su nombre" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Apellido</label>
+                            <input id="apellido" class="form-control" type="text" name="name" value="" placeholder="Ingrese su apellido" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nacimiento</label>
+                            <input id="nacimiento" class="form-control" type="date" name="name" value="" placeholder="Ingrese su fecha de nacimiento" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Profile</label>
+                            <input id="profile" class="form-control" type="text" name="name" value="" placeholder="Ingrese su nombre de profile" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Descripcion de profile </label>
+                            <textarea id="description" required style="max-height:80px; min-height:80px;" class="form-control"></textarea>
+                        </div>
+
+                        <input id="registrar" class="btn btn-outline-primary btn-block text-center" type="submit" name="name" value="Enviar" />
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+  
+
+
+        <div class="col-md-7">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Last Name</th>
+                        <th>Birthday</th>
+                        <th>Profile</th>
+                        <th>Profile Description</th>
+                    </tr>
+                </thead>
+                <tbody id="listado"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="modal_mod" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"style="width:340px;">
+          
+            <div class="modal-body">
+
+                <div class="card" style="width:300px;">
+                    <h5 class="card-title text-center">Modificar</h5>
+                    <div class="card-body">
+                        <form id="modif">
+
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input id="nombre1" class="form-control" type="text" name="name" value="" placeholder="Ingrese su nombre" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Apellido</label>
+                                <input id="apellido1" class="form-control" type="text" name="name" value="" placeholder="Ingrese su apellido" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Nacimiento</label>
+                                <input id="nacimiento1" class="form-control" type="date" name="name" value="" placeholder="Ingrese su fecha de nacimiento" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Profile</label>
+                                <input id="profile1" class="form-control" type="text" name="name" value="" placeholder="Ingrese su nombre de profile" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Descripcion de profile </label>
+                                <textarea id="description1" required style="max-height:80px; min-height:80px;" class="form-control"></textarea>
+                            </div>
+
+                            <input  class="btn btn-outline-primary btn-block text-center" type="submit" name="name" value="Enviar" />
+
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+          
+        </div>
+    </div>
+</div>
+
+<script src="~/JS/Index.js"></script>
+

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ClientModelStoreContainer" CdmEntityContainer="ClientEntities">
+    <EntitySetMapping Name="Client_Table">
+      <EntityTypeMapping TypeName="ClientModel.Client_Table">
+        <MappingFragment StoreEntitySet="Client_Table">
+          <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="ProfileID" ColumnName="ProfileID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profile_Table">
+      <EntityTypeMapping TypeName="ClientModel.Profile_Table">
+        <MappingFragment StoreEntitySet="Profile_Table">
+          <ScalarProperty Name="Id_Profiel" ColumnName="Id_Profiel" />
+          <ScalarProperty Name="Profiel_Name" ColumnName="Profiel_Name" />
+          <ScalarProperty Name="Profiel_Description" ColumnName="Profiel_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

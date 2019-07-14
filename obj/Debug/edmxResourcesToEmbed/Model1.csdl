@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClientModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Client_Table">
+    <Key>
+      <PropertyRef Name="Client_Id" />
+    </Key>
+    <Property Name="Client_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ProfileID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Profile_Table" Relationship="Self.FK_Client_Table_Profile_Table" FromRole="Client_Table" ToRole="Profile_Table" />
+  </EntityType>
+  <EntityType Name="Profile_Table">
+    <Key>
+      <PropertyRef Name="Id_Profiel" />
+    </Key>
+    <Property Name="Id_Profiel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Profiel_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Profiel_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Client_Table" Relationship="Self.FK_Client_Table_Profile_Table" FromRole="Profile_Table" ToRole="Client_Table" />
+  </EntityType>
+  <Association Name="FK_Client_Table_Profile_Table">
+    <End Role="Profile_Table" Type="Self.Profile_Table" Multiplicity="1" />
+    <End Role="Client_Table" Type="Self.Client_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profile_Table">
+        <PropertyRef Name="Id_Profiel" />
+      </Principal>
+      <Dependent Role="Client_Table">
+        <PropertyRef Name="ProfileID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ClientEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Client_Table" EntityType="Self.Client_Table" />
+    <EntitySet Name="Profile_Table" EntityType="Self.Profile_Table" />
+    <AssociationSet Name="FK_Client_Table_Profile_Table" Association="Self.FK_Client_Table_Profile_Table">
+      <End Role="Profile_Table" EntitySet="Profile_Table" />
+      <End Role="Client_Table" EntitySet="Client_Table" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
